@@ -28,9 +28,7 @@ public class TC001 extends MakeMyTripWrappers{
 			.enterNewPassword(password)
 			.enterConfirmPassword(confirmpassword)
 			.clickIAgree()
-			.clickCreateAccountButton();		
-			
-			
+			.clickCreateAccountButton();				
 		}
 		
 	
