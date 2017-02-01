@@ -192,6 +192,7 @@ public class Dashboard extends MakeMyTripWrappers {
 	public DomesticFlight clickDomesticFlightButton()
 	{
 		clickByXpathNoSnap("(//a[@href='//www.makemytrip.com/flights'])[1]");
+		switchToLastWindow();
 		return new DomesticFlight( driver,  test);
 	}
 	
@@ -199,6 +200,7 @@ public class Dashboard extends MakeMyTripWrappers {
 	public InternationalFlight clickInternationalButton()
 	{
 		clickByXpathNoSnap("(//a[@href='//www.makemytrip.com/international-flights'])[1]");
+		switchToLastWindow();
 		return new InternationalFlight(driver, test);
 	}
 	
@@ -206,6 +208,7 @@ public class Dashboard extends MakeMyTripWrappers {
 	public DomesticHotel clickDomesticHotelButton()
 	{
 		clickByXpathNoSnap("(//a[@href='//www.makemytrip.com/hotels'])[1]");
+		switchToLastWindow();
 		return new DomesticHotel(driver, test);
 	}
 	
@@ -213,6 +216,7 @@ public class Dashboard extends MakeMyTripWrappers {
 	public InternationalHotel clickInternationalHotelButton()
 	{
 		clickByXpathNoSnap("(//a[@href='//www.makemytrip.com/hotels-international/'])[1]");
+		switchToLastWindow();
 		return new InternationalHotel(driver, test);
 	}
 	

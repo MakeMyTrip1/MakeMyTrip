@@ -2,6 +2,9 @@ package pages;
 
 
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
 
@@ -29,7 +32,7 @@ public class FlightSelect extends MakeMyTripWrappers {
 
 	public FlightSelect selectNoOfStops(){
 
-		clickById("stops_0_dep");
+		clickById("stops_1_dep");
 		return this;
 
 	}

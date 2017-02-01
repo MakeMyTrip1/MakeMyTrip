@@ -8,7 +8,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import wrappers.MakeMyTripWrappers;
 
 public class InternationalFlight extends MakeMyTripWrappers{
-	
+
 	public InternationalFlight(RemoteWebDriver driver, ExtentTest test){
 		this.driver=driver;
 		this.test = test;
@@ -16,118 +16,118 @@ public class InternationalFlight extends MakeMyTripWrappers{
 			reportStep("This is not International Flight Page", "FAIL");
 		}
 	}
-	
+
 	//click one_way trip
-		public InternationalFlight clickOneWayTrip()
+	public InternationalFlight clickOneWayTrip()
+	{
+		clickById("one_way_button1");
+		return this;
+	}
+
+	//click round trip
+	public InternationalFlight clickRoundTrip()
+	{
+		clickById("round_trip_button1");
+		return this;
+	}
+
+	//enter departure city
+	public InternationalFlight enterDepartureCity(String departure_city)
+	{
+		enterById("from_typeahead1", departure_city);
+		//driver.findElementByXPath("//input[@id='from_typeahead1']").sendKeys(Keys.TAB);
+		return this;
+	}
+
+	//enter Destination city
+	public InternationalFlight enterDestinationCity(String destination_city)
+	{
+		enterById("to_typeahead1", destination_city);
+		//driver.findElementByXPath("//input[@id='to_typeahead1']").sendKeys(Keys.TAB);
+		return this; 
+	}
+
+	//select departure date
+	public InternationalFlight selectDepartureDate()
+	{
+		departureDate();
+		return this;
+	}
+
+	//select return date
+	public InternationalFlight selectReturnDate()
+	{
+		returnDate();
+		return this;
+	}
+
+	//Selecting no.of adults
+	public InternationalFlight selectNoOfAdults(int no_Of_Adults)
+	{
+		for(int i=1;i<=no_Of_Adults;i++)
 		{
-			clickById("one_way_button1");
-			return this;
-		}
-		
-		//click round trip
-		public InternationalFlight clickRoundTrip()
+			driver.findElementByXPath("//div[@id='adult_count']/a[2]").click();	
+		}		
+		return this;
+	}
+
+	//decrease no.of adults
+	public InternationalFlight decreaseNoOfAdults(int no_Of_Adults)
+	{
+		for(int i=1;i<=no_Of_Adults;i++)
 		{
-			clickByXpath("//input[@value='round_trip']");
-			return this;
+			driver.findElementByXPath("//div[@id='adult_count']/a[1]").click();	
 		}
-		
-		//enter departure city
-		public InternationalFlight enterDepartureCity(String departure_city)
+		return this;
+	}
+
+	//Selecting no.of children
+	public InternationalFlight selectNoOfChildren(int no_Of_Children)
+	{
+		for(int i=1;i<=no_Of_Children;i++)
 		{
-			enterByXpath("//input[@id='from_typeahead1']", departure_city);
-			driver.findElementByXPath("//input[@id='from_typeahead1']").sendKeys(Keys.TAB);
-			return this;
-		}
-		
-		//enter Destination city
-		public InternationalFlight enterDestinationCity(String destination_city)
+			driver.findElementByXPath("//div[@id='child_count']/a[2]").click();	
+		}		
+		return this;
+	}
+
+	//decrease no.of children
+	public InternationalFlight decreaseNoOfChildren(int no_Of_Children)
+	{
+		for(int i=1;i<=no_Of_Children;i++)
 		{
-			enterByXpath("//input[@id='to_typeahead1']", destination_city);
-			driver.findElementByXPath("//input[@id='to_typeahead1']").sendKeys(Keys.TAB);
-			return this; 
-		}
-		
-		//select departure date
-		public InternationalFlight selectDepartureDate()
+			driver.findElementByXPath("//div[@id='child_count']/a[1]").click();	
+		}		
+		return this;
+	}
+
+	//Selecting no.of Infant
+	public InternationalFlight selectNoOfInfant(int no_Of_Infant)
+	{
+		for(int i=1;i<=no_Of_Infant;i++)
 		{
-			departureDate();
-			return this;
-		}
-		
-		//select return date
-		public InternationalFlight selectReturnDate()
+			driver.findElementByXPath("//div[@id='infant_count']/a[2]").click();	
+		}		
+		return this;
+	}
+
+	//decrease no of infant
+	public InternationalFlight decreaseNoOfInfant(int no_Of_Infant)
+	{
+		for(int i=1;i<=no_Of_Infant;i++)
 		{
-			returnDate();
-			return this;
-		}
-		
-		//Selecting no.of adults
-		public InternationalFlight selectNoOfAdults(int no_Of_Adults)
-		{
-			for(int i=1;i<=no_Of_Adults;i++)
-			{
-				driver.findElementByXPath("//div[@id='adult_count']/a[2]").click();	
-			}		
-			return this;
-		}
-		
-		//decrease no.of adults
-		public InternationalFlight decreaseNoOfAdults(int no_Of_Adults)
-		{
-			for(int i=1;i<=no_Of_Adults;i++)
-			{
-				driver.findElementByXPath("//div[@id='adult_count']/a[1]").click();	
-			}
-			return this;
-		}
-		
-		//Selecting no.of children
-		public InternationalFlight selectNoOfChildren(int no_Of_Children)
-		{
-			for(int i=1;i<=no_Of_Children;i++)
-			{
-				driver.findElementByXPath("//div[@id='child_count']/a[2]").click();	
-			}		
-			return this;
-		}
-		
-		//decrease no.of children
-		public InternationalFlight decreaseNoOfChildren(int no_Of_Children)
-		{
-			for(int i=1;i<=no_Of_Children;i++)
-			{
-				driver.findElementByXPath("//div[@id='child_count']/a[1]").click();	
-			}		
-			return this;
-		}
-		
-		//Selecting no.of Infant
-		public InternationalFlight selectNoOfInfant(int no_Of_Infant)
-		{
-			for(int i=1;i<=no_Of_Infant;i++)
-			{
-				driver.findElementByXPath("//div[@id='infant_count']/a[2]").click();	
-			}		
-			return this;
-		}
-		
-		//decrease no of infant
-		public InternationalFlight decreaseNoOfInfant(int no_Of_Infant)
-		{
-			for(int i=1;i<=no_Of_Infant;i++)
-			{
-				driver.findElementByXPath("//div[@id='infant_count']/a[1]").click();	
-			}		
-			return this;
-		}
-		
-		//select search flight button
-		public FlightSelectForInternational clickSearchFlight() throws Throwable
-		{
-			clickById("flights_submit");
-			return new FlightSelectForInternational( driver,  test);
-		}
-		
+			driver.findElementByXPath("//div[@id='infant_count']/a[1]").click();	
+		}		
+		return this;
+	}
+
+	//select search flight button
+	public FlightSelectForInternational clickSearchFlight()
+	{
+		clickById("flights_submit");
+		return new FlightSelectForInternational( driver,  test);
+	}
+
 
 
 }

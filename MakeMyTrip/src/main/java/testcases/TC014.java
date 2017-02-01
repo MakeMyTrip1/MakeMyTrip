@@ -6,30 +6,32 @@ import org.testng.annotations.Test;
 import pages.Dashboard;
 import wrappers.MakeMyTripWrappers;
 
-public class TC013 extends MakeMyTripWrappers{
-
+public class TC014 extends MakeMyTripWrappers{
+	
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
 		testCaseName = "Search International Flights";
-		testDescription = "Search International Flights for OneWay";
+		testDescription = "Search International Flights for RoundTrip";
 		category = "smoke";
 		authors = "Rajesh";
 		url="https://www.makemytrip.com/flights-hotels";
-		dataSheetName = "TC013";
+		dataSheetName = "TC014";
 	}
-
+	
 	@Test
-	public void searchInternationalFlights() throws Throwable{
-
+	public void searchInternationalFlightsForRT(){
+		
 		new Dashboard(driver, test)
 		.clickFlightTab()
 		.clickInternationalOptionInFlight()
-		.clickOneWayTrip()
+		.clickRoundTrip()
 		.enterDepartureCity("Chennai, India (MAA)")
-		.enterDestinationCity("Dubai, UAE (DXB)")
+		.enterDestinationCity("Kuala Lumpur, Malaysia (KUL)")
 		.selectDepartureDate()
-		.clickSearchFlight();	
+		.selectReturnDate()
+		.clickSearchFlight();
+		
 	}
 
 }

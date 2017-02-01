@@ -12,7 +12,7 @@ public class TC012 extends MakeMyTripWrappers{
 	public void setValues(){
 		browserName = "chrome";
 		testCaseName = "Search Domestic Flights";
-		testDescription = "Search Domestic Flights for OneWay";
+		testDescription = "Search Domestic Flights for Return Trip";
 		category = "smoke";
 		authors = "Rajesh";
 		url="https://www.makemytrip.com/flights-hotels/";
@@ -27,7 +27,7 @@ public class TC012 extends MakeMyTripWrappers{
 		.clickFlightTab()
 		.clickRoundTrip()
 		.enterDepartureCity("chennai")
-		.enterDestinationCity("kolkata")
+		.enterDestinationCity("Kolkata, India (CCU)")
 		.selectDepartureDate()
 		.selectReturnDate()
 		.selectNoOfAdults(2)

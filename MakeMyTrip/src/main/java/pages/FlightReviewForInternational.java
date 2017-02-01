@@ -1,10 +1,7 @@
 package pages;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
-
 import com.relevantcodes.extentreports.ExtentTest;
-
-import freemarker.core.ReturnInstruction.Return;
 import wrappers.MakeMyTripWrappers;
 
 public class FlightReviewForInternational extends MakeMyTripWrappers{

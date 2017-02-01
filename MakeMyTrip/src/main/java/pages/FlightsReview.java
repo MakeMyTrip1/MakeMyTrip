@@ -74,10 +74,10 @@ public class FlightsReview extends MakeMyTripWrappers{
 		return this;
 	}
 	
-	public FlightsReview clickContinueAsGuest(){
+	public FlightsTraveller clickContinueAsGuest(){
 		
 		clickByLink("Continue as Guest");
-		return this;
+		return new FlightsTraveller(driver, test);
 	}
 
 	public FlightsReview alertHandle(){

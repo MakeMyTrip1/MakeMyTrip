@@ -21,6 +21,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -90,7 +91,6 @@ public class GenericWrappers extends Reporter implements Wrappers {
 			if(browser.equalsIgnoreCase("chrome")){
 				System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 				driver = new ChromeDriver();
-				Thread.sleep(2000);
 				driver.manage().deleteAllCookies();
 			}else{
 				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
@@ -99,11 +99,11 @@ public class GenericWrappers extends Reporter implements Wrappers {
 				driver.manage().deleteAllCookies();
 			}
 //			Process p=Runtime.getRuntime().exec("cmd /c start TempClean.bat",null, new File("./Temp/TempClean.bat"));
+			new WebDriverWait(driver, 30);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 			driver.get(url);
 			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
-
 			primaryWindowHandle = driver.getWindowHandle();		
 			reportStep("The browser:" + browser + " launched successfully", "PASS");
 		} catch (Exception e) {
@@ -355,6 +355,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	 */
 	public void clickById(String id) {
 		try{
+			//wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id(id))));
 			driver.findElement(By.id(id)).click();
 			reportStep("The element with id: "+id+" is clicked.", "PASS");
 
@@ -397,6 +398,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	 */
 	public void clickByLink(String name) {
 		try{
+			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.linkText(name))));
 			driver.findElement(By.linkText(name)).click();
 			reportStep("The element with link name: "+name+" is clicked.", "PASS");
 		} catch (Exception e) {
