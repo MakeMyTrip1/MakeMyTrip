@@ -20,7 +20,7 @@ public class TC029 extends MakeMyTripWrappers
 	}
 	
 	@Test
-	public void TC029() throws InterruptedException
+	public void BookAsGuest() throws InterruptedException
 	{
 		driver.manage().deleteAllCookies();
 		new Dashboard(driver, test)

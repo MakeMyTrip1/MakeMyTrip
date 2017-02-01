@@ -20,7 +20,7 @@ public class TC031 extends MakeMyTripWrappers
 	}
 	
 	@Test
-	public void TC031() throws InterruptedException
+	public void PagmentPage() throws InterruptedException
 	{
 		driver.manage().deleteAllCookies();
 		new Dashboard(driver, test)
@@ -42,8 +42,13 @@ public class TC031 extends MakeMyTripWrappers
         .Clickloginbutton()
         .EnterEmailID("aaavig@yopmail.com")
         .EnterPassword("aaavig")
-        .ClickContinueButton();
-        
+        .ClickContinueButton()
+        .ClickContinueGuestButton()
+        .Enterfirstname("AAA")
+        .Enterlastname("BBB")
+        .EnterEmailID("AAA@yopmail.com")
+        .EnterMobilenumber("9962272871")
+        .ClickPaymentbutton();
 		
         
       }

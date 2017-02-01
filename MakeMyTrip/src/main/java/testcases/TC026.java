@@ -20,7 +20,7 @@ public class TC026 extends MakeMyTripWrappers
 	}
 	
 	@Test
-	public void TC026()
+	public void InternationalHotelSearch()
 	{
 		new Dashboard(driver, test)
 		.clickLoginMenu()

@@ -20,7 +20,7 @@ public class TC027 extends MakeMyTripWrappers
 	}
 	
 	@Test
-	public void TC027() throws InterruptedException
+	public void HotelSelect() throws InterruptedException
 	{
 		new Dashboard(driver, test)
 		.clickLoginMenu()

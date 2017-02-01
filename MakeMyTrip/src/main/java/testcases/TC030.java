@@ -20,7 +20,7 @@ public class TC030 extends MakeMyTripWrappers
 	}
 	
 	@Test
-	public void TC030() throws InterruptedException
+	public void BooKWithLogin() throws InterruptedException
 	{
 		driver.manage().deleteAllCookies();
 		new Dashboard(driver, test)
