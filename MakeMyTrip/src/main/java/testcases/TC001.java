@@ -19,7 +19,7 @@ public class TC001 extends MakeMyTripWrappers{
 		dataSheetName = "TC001";
 	}
 		@Test(dataProvider="fetchData")
-		public void TC001(String emailid, String password, String confirmpassword)
+		public void SignUp(String emailid, String password, String confirmpassword)
 		{
 			new Dashboard(driver, test)
 			.clickLoginMenu()

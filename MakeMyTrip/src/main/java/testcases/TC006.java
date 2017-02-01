@@ -20,7 +20,7 @@ public class TC006 extends MakeMyTripWrappers {
 	}
 	
 	@Test
-	public void TC006() throws InterruptedException
+	public void ResetPasswordAndLogin() throws InterruptedException
 	{
 		new Dashboard(driver, test)
 		.clickLoginMenu()

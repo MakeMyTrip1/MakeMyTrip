@@ -20,7 +20,7 @@ public class TC002 extends MakeMyTripWrappers
 	}
 	
 	@Test
-	public void TC002()
+	public void signUpError()
 	{
 		new Dashboard(driver, test)
 		.clickLoginMenu()

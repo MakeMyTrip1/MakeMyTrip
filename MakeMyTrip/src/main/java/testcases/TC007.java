@@ -20,7 +20,7 @@ public class TC007 extends MakeMyTripWrappers {
 	}
 	
 	@Test
-	public void TC007()
+	public void ForgotPasswordError()
 	{
 		new Dashboard(driver, test)
 		.clickLoginMenu()
