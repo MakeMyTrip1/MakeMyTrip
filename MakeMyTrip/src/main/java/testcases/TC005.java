@@ -1,5 +1,6 @@
 package testcases;
 
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -20,7 +21,7 @@ public class TC005 extends MakeMyTripWrappers {
 	}
 	
 	@Test
-	public void TC005()
+	public void Logout()
 	{
 		new Dashboard(driver, test)
 		.clickLoginMenu()
