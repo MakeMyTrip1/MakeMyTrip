@@ -12,12 +12,13 @@ public class FlightSelectForInternational extends MakeMyTripWrappers{
 
 		this.driver = driver;
 		this.test = test;
-		System.out.println(driver.getTitle());
+
 		if(!verifyTitle("International Flights Air Tickets, Cheap International Air fares at MakeMyTrip")){
-			reportStep("This is not International flight select page", "FAIL");
+			if(!verifyTitle("MakeMyTrip")){
+				reportStep("This is not International flight select page", "FAIL");
+			}
 		}
 	}
-
 	public FlightSelectForInternational clickNoOFStopsInternational(){
 
 		clickByXpath("(//span[@class='stop_text make_blockElm'])[1]");

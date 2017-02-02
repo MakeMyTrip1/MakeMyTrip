@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import pages.Dashboard;
+import pages.DomesticFlight;
 import wrappers.MakeMyTripWrappers;
 
 public class TC013 extends MakeMyTripWrappers{
@@ -15,21 +16,19 @@ public class TC013 extends MakeMyTripWrappers{
 		testDescription = "Search International Flights for OneWay";
 		category = "smoke";
 		authors = "Rajesh";
-		url="https://www.makemytrip.com/flights-hotels";
+		url="https://www.makemytrip.com/flights";
 		dataSheetName = "TC013";
 	}
 
 	@Test
 	public void searchInternationalFlights() throws Throwable{
 
-		new Dashboard(driver, test)
-		.clickFlightTab()
-		.clickInternationalOptionInFlight()
+		new DomesticFlight(driver, test)
 		.clickOneWayTrip()
-		.enterDepartureCity("Chennai, India (MAA)")
-		.enterDestinationCity("Dubai, UAE (DXB)")
+		.enterDepartureCity("Chennai (MAA)")
+		.enterDestinationCity("Bangkok, Thailand (BKK)")
 		.selectDepartureDate()
-		.clickSearchFlight();	
+		.clickSearchForInternational();
 	}
 
 }

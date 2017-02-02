@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import pages.Dashboard;
+import pages.DomesticFlight;
 import wrappers.MakeMyTripWrappers;
 
 public class TC011 extends MakeMyTripWrappers{
@@ -15,18 +16,17 @@ public class TC011 extends MakeMyTripWrappers{
 		testDescription = "Search Domestic Flights for OneWay";
 		category = "smoke";
 		authors = "Rajesh";
-		url="https://www.makemytrip.com/flights-hotels/";
+		url="https://www.makemytrip.com/flights";
 		dataSheetName = "TC011";
 	}
 	
 	@Test
 	public void searchDomesticFlightsTC011(){
 		
-		new Dashboard(driver, test)
-		.clickFlightTab()
+		new DomesticFlight(driver, test)
 		.clickOneWayTrip()
-		.enterDepartureCity("Chennai")
-		.enterDestinationCity("Kolkata")
+		.enterDepartureCity("Chennai (MAA)")
+		.enterDestinationCity("New Delhi (DEL)")
 		.selectDepartureDate()
 		.clickSearchFlight();
 			

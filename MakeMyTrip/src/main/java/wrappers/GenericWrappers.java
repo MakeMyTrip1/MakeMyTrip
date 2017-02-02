@@ -355,12 +355,12 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	 */
 	public void clickById(String id) {
 		try{
-			//wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id(id))));
+			
 			driver.findElement(By.id(id)).click();
 			reportStep("The element with id: "+id+" is clicked.", "PASS");
 
 		} catch (Exception e) {
-			reportStep("The element with id: "+id+" could not be clicked.", "FAIL");
+			reportStep("The element with id: "+id+" could not be clicked."+e+"", "FAIL");
 		}
 	}
 
@@ -398,7 +398,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	 */
 	public void clickByLink(String name) {
 		try{
-			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.linkText(name))));
+			//wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.linkText(name))));
 			driver.findElement(By.linkText(name)).click();
 			reportStep("The element with link name: "+name+" is clicked.", "PASS");
 		} catch (Exception e) {

@@ -3,7 +3,8 @@ package testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-
+import pages.Dashboard;
+import pages.DomesticFlight;
 import pages.FlightSelect;
 import wrappers.MakeMyTripWrappers;
 
@@ -16,21 +17,21 @@ public class TC015 extends MakeMyTripWrappers{
 		testDescription = "Book a ticket by selecting No of stops option";
 		category = "smoke";
 		authors = "Rajesh";
-		url="https://flights.makemytrip.com/makemytrip/search/O/O/E/1/0/0/S/V0/MAA_DEL_23-02-2017?intid=DF_LP_Widget_Search_Chennai_New-Delhi";
+		url="https://www.makemytrip.com/flights";
 		dataSheetName = "TC015";
 	}
 
 	@Test
 	public void selectingNoOFOption(){
 
-		new FlightSelect(driver, test)
-		.selectBookButton()
-		.enterContactInfo("r@gmail.com")
-		.clickContinueAsGuest()
-		.enterFirstName("Kumar")
-		.enterLastName("Jk")
-		.enterPhoneNumber("8695896589")
-		.selectContinueToPaymaent();
+		new DomesticFlight(driver, test)
+		.clickOneWayTrip()
+		.enterDepartureCity("Chennai (MAA)")
+		.enterDestinationCity("New Delhi (DEL)")
+		.selectDepartureDate()
+		.clickSearchFlight()
+		.selectNoOfStops();
+		
 	}
 
 }

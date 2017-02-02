@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import pages.Dashboard;
+import pages.DomesticFlight;
 import pages.FlightSelect;
 import wrappers.MakeMyTripWrappers;
 
@@ -15,15 +16,21 @@ public class TC016 extends MakeMyTripWrappers{
 		testDescription = "Book a ticket by selecting Departure Dime From Option";
 		category = "smoke";
 		authors = "Rajesh";
-		url="https://flights.makemytrip.com/makemytrip/search/O/O/E/1/0/0/S/V0/MAA_CCU_21-03-2017?intid=DF_LP_Widget_Search_Chennai_Kolkata";
+		url="https://www.makemytrip.com/flights";
 		dataSheetName = "TC016";
 	}
 	
 	@Test
 	public void selectingNoOFOption(){
 		
-		new FlightSelect(driver, test)
+		new DomesticFlight(driver, test)
+		.clickOneWayTrip()
+		.enterDepartureCity("Chennai (MAA)")
+		.enterDestinationCity("New Delhi (DEL)")
+		.selectDepartureDate()
+		.clickSearchFlight()
 		.selectTiming();
+		
 		
 	}
 }

@@ -32,7 +32,7 @@ public class FlightSelect extends MakeMyTripWrappers {
 
 	public FlightSelect selectNoOfStops(){
 
-		clickById("stops_1_dep");
+		clickByClassName("stop_text_stops");
 		return this;
 
 	}
@@ -45,7 +45,7 @@ public class FlightSelect extends MakeMyTripWrappers {
 	
 	public FlightSelect selectAirlines(){
 		
-		clickById("aln_G8_dep");
+		clickById("aln_6E_dep");
 		return this;
 	}
 	
