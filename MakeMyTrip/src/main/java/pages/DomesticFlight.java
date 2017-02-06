@@ -25,7 +25,9 @@ public class DomesticFlight extends MakeMyTripWrappers {
 	public DomesticFlight clickDomesticOptionInFlight()
 	{
 		clickByXpath("//a[@class='row segmented_btn first  active  ']");
-		return this;		
+		return this;
+		
+		
 	}
 
 	//click International option
