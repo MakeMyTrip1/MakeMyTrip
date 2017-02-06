@@ -37,5 +37,10 @@ public class FlightSelectForInternational extends MakeMyTripWrappers{
 		return this;
 	}
 
+	public FlightReviewForInternational clickBookNowButtonInternational(){
+		
+		clickByLink("Book Now");
+		return new FlightReviewForInternational(driver, test);
+	}
 
 }
