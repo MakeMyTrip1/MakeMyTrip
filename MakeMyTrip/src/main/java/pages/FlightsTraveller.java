@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -12,7 +14,8 @@ public class FlightsTraveller extends MakeMyTripWrappers {
 
 		this.driver = driver;
 		this.test = test;
-		if(!verifyTitle("Flights Review"))
+		System.out.println(driver.getTitle());
+		if(!verifyTitle("Flights Traveller"))
 		{			
 			reportStep("This is not Flight Review page", "FAIL");
 		}
@@ -49,9 +52,11 @@ public class FlightsTraveller extends MakeMyTripWrappers {
 		return this;
 	}
 
-	public MakeMytripPayment selectContinueToPaymaent(){
+	public MakeMytripPayment selectContinueToPaymaent() throws Throwable{
 
+		
 		clickByLink("Continue to payment");
+		
 		return new MakeMytripPayment(driver, test);
 	}
 

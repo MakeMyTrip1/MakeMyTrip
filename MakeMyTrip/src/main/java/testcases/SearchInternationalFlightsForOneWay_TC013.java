@@ -7,7 +7,7 @@ import pages.Dashboard;
 import pages.DomesticFlight;
 import wrappers.MakeMyTripWrappers;
 
-public class TC013 extends MakeMyTripWrappers{
+public class SearchInternationalFlightsForOneWay_TC013 extends MakeMyTripWrappers{
 
 	@BeforeClass
 	public void setValues(){

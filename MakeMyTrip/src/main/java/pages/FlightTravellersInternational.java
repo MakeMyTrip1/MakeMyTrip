@@ -47,7 +47,7 @@ public class FlightTravellersInternational extends MakeMyTripWrappers{
 		return this;
 	}
 
-	public MakeMytripPayment clickPaymentInInternational(){
+	public MakeMytripPayment clickPaymentInInternational() throws Throwable{
 
 		clickByXpath("//span[@class='TND__sprite TND-icon-lock inlineB marR5']");
 		return new MakeMytripPayment(driver, test);

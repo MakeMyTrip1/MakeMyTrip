@@ -8,7 +8,7 @@ import pages.DomesticFlight;
 import pages.FlightSelect;
 import wrappers.MakeMyTripWrappers;
 
-public class TC015 extends MakeMyTripWrappers{
+public class SelectingNoOfStopsOption_TC015 extends MakeMyTripWrappers{
 
 	@BeforeClass
 	public void setValues(){
