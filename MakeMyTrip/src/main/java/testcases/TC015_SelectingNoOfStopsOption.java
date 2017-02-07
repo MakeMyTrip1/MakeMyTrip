@@ -8,29 +8,30 @@ import pages.DomesticFlight;
 import pages.FlightSelect;
 import wrappers.MakeMyTripWrappers;
 
-public class SelectingDepartureDimeFromOption_TC016 extends MakeMyTripWrappers{
+public class TC015_SelectingNoOfStopsOption extends MakeMyTripWrappers{
+
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Selecting Departure Dime From Option";
-		testDescription = "Book a ticket by selecting Departure Dime From Option";
+		testCaseName = "Selecting No of stops option";
+		testDescription = "Book a ticket by selecting No of stops option";
 		category = "smoke";
 		authors = "Rajesh";
 		url="https://www.makemytrip.com/flights";
-		dataSheetName = "TC016";
+		dataSheetName = "TC015";
 	}
-	
+
 	@Test
-	public void selectFlightTimings(){
-		
+	public void selectingNoOFOption(){
+
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()
 		.enterDepartureCity("Chennai (MAA)")
 		.enterDestinationCity("New Delhi (DEL)")
 		.selectDepartureDate()
 		.clickSearchFlight()
-		.selectTiming();
-		
+		.selectNoOfStops();
 		
 	}
+
 }

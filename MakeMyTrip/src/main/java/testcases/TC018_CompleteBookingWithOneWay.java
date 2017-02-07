@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.DomesticFlight;
 import wrappers.MakeMyTripWrappers;
 
-public class CompleteBookingWithOneWay_TC018 extends MakeMyTripWrappers {
+public class TC018_CompleteBookingWithOneWay extends MakeMyTripWrappers {
 
 	@BeforeClass
 	public void setValues(){

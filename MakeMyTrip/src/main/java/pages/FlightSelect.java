@@ -1,11 +1,11 @@
 package pages;
 
 
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import com.relevantcodes.extentreports.ExtentTest;
 
 import wrappers.MakeMyTripWrappers;
@@ -58,6 +58,7 @@ public class FlightSelect extends MakeMyTripWrappers {
 	public FlightSelect modifyToCity(String toCity){
 		
 		enterByXpath("//div[@class='multicity_wrapper clearfix']/div[3]//input[2]", toCity);
+		driver.findElementByXPath("//div[@class='multicity_wrapper clearfix']/div[3]//input[2]").sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
 		return this;
 	}
 	
@@ -72,6 +73,12 @@ public class FlightSelect extends MakeMyTripWrappers {
 		clickByLink("Book");
 		return new FlightsReview(driver, test);
 	}
-			
+		
+	public FlightSelect verifyModifiedFlight(String modifiedFlight){
+		
+		//System.out.println(driver.findElement(By.xpath("//*[@id='content']/div/div[1]/div[1]/div[1]/div/div[1]/div/a[1]/p")).getText());
+		verifyTextByXpath("//*[@id='content']/div/div[1]/div[1]/div[1]/div/div[1]/div/a[1]/p", modifiedFlight);
+		return this;		
+	}
 
 }

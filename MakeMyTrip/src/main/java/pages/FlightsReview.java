@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,7 +27,8 @@ public class FlightsReview extends MakeMyTripWrappers{
 
 	public FlightsReview enterInvalidCoupon(String invalidCoupon){
 
-		enterByXpath("//span[@class ='promo_txt ng-binding']", invalidCoupon);
+		clickByXpath("(//div[@class='input-group coupon_scope'])[2]");
+		enterByXpath("//div[@class = 'col-sm-12 mobile_fullwidth']//input", invalidCoupon);
 		return this;
 	}
 	public FlightsReview clickApplyButtton(){
@@ -37,7 +39,8 @@ public class FlightsReview extends MakeMyTripWrappers{
 	
 	public FlightsReview verifyCouponErrorMessage(String erroMessage){
 		
-		verifyTextByXpath("//span[@class ='promo_txt ng-binding']", erroMessage);
+		System.out.println(driver.findElement(By.xpath("//span[@class='promo_txt ng-binding']")).getText());
+		verifyTextByXpath("//span[@class='promo_txt ng-binding']", erroMessage);
 		return this;
 	}
 	
@@ -108,6 +111,31 @@ public class FlightsReview extends MakeMyTripWrappers{
 		return new FlightsTraveller(driver, test);
 	}
 
+	public FlightsReview clickLoginAndContinue(){
+		
+		clickByLink("Login & Continue");
+		return this;
+	}
 	
+	public FlightsReview enterLoginId(String enterUserName){
+		
+		enterById("username", enterUserName);
+		//driver.findElement(By.id("username")).sendKeys(Keys.TAB);
+		return this;
+	}
 
+	public FlightsReview enterPassword(String enterPassword){
+		
+		//clickById("password_text");
+		clickByXpath("//*[@id='login_form_0']/p[2]/span[1]");
+		//enterById("password", enterPassword);
+		enterByXpath("//*[@id='password']", enterPassword);
+		return this;
+	}
+	
+	public FlightsTraveller clickLoginButton(){
+		
+		clickById("login_btn");
+		return new FlightsTraveller(driver, test);
+	}
 }

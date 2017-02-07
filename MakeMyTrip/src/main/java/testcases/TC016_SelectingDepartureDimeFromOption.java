@@ -5,32 +5,32 @@ import org.testng.annotations.Test;
 
 import pages.Dashboard;
 import pages.DomesticFlight;
+import pages.FlightSelect;
 import wrappers.MakeMyTripWrappers;
 
-public class SearchInternationalFlightsForRoundTrip_TC014 extends MakeMyTripWrappers{
-	
+public class TC016_SelectingDepartureDimeFromOption extends MakeMyTripWrappers{
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Search International Flights";
-		testDescription = "Search International Flights for RoundTrip";
+		testCaseName = "Selecting Departure Dime From Option";
+		testDescription = "Book a ticket by selecting Departure Dime From Option";
 		category = "smoke";
 		authors = "Rajesh";
 		url="https://www.makemytrip.com/flights";
-		dataSheetName = "TC014";
+		dataSheetName = "TC016";
 	}
 	
 	@Test
-	public void searchInternationalFlightsForRT(){
+	public void selectFlightTimings(){
 		
 		new DomesticFlight(driver, test)
-		.clickRoundTrip()
+		.clickOneWayTrip()
 		.enterDepartureCity("Chennai (MAA)")
-		.enterDestinationCity("Bangkok, Thailand (BKK)")
+		.enterDestinationCity("New Delhi (DEL)")
 		.selectDepartureDate()
-		.selectReturnDate()
-		.clickSearchForInternational();
+		.clickSearchFlight()
+		.selectTiming();
+		
 		
 	}
-
 }

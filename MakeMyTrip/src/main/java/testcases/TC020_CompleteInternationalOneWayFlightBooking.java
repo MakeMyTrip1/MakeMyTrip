@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.DomesticFlight;
 import wrappers.MakeMyTripWrappers;
 
-public class CompleteInternationalOneWayFlightBooking_TC020 extends MakeMyTripWrappers {
+public class TC020_CompleteInternationalOneWayFlightBooking extends MakeMyTripWrappers {
 	
 	@BeforeClass
 	public void setValues(){
@@ -33,10 +33,9 @@ public class CompleteInternationalOneWayFlightBooking_TC020 extends MakeMyTripWr
 		.clickContinueAsGuestInInternational()
 		.enterFirstNameInInternational("Kerthu")
 		.enterSurNameInInternational("Kumar")
-		
 		.enterPhoneNumberInInternational("9632589658")
-		.uncheckTravelServicesInInternational()
-		.clickPaymentInInternational();
+		.uncheckTravelServicesInInternational();
+		
 		
 	}
 

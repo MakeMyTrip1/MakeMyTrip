@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.DomesticFlight;
 import wrappers.MakeMyTripWrappers;
 
-public class CompleteTheRoundTripBooking_TC019 extends MakeMyTripWrappers{
+public class TC019_CompleteTheRoundTripBooking extends MakeMyTripWrappers{
 
 	@BeforeClass
 	public void setValues(){
