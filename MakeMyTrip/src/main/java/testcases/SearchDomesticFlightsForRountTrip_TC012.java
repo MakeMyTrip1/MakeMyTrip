@@ -12,7 +12,7 @@ public class SearchDomesticFlightsForRountTrip_TC012 extends MakeMyTripWrappers{
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Search Domestic Flights";
+		testCaseName = "Search Domestic Flights RoundTrip";
 		testDescription = "Search Domestic Flights for Return Trip";
 		category = "smoke";
 		authors = "Rajesh";
@@ -21,7 +21,7 @@ public class SearchDomesticFlightsForRountTrip_TC012 extends MakeMyTripWrappers{
 	}
 	
 	@Test
-	public void searchDomesticFlightsForRTTC012(){
+	public void searchDomesticFlightsForRT(){
 		
 		new DomesticFlight(driver, test)
 		.clickRoundTrip()

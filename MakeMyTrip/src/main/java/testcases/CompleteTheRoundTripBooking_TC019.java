@@ -20,7 +20,7 @@ public class CompleteTheRoundTripBooking_TC019 extends MakeMyTripWrappers{
 	}
 	
 	@Test
-	public void searchDomesticFlightsTC011() throws Throwable{
+	public void CompleteRoundTripBooking() throws Throwable{
 
 		new DomesticFlight(driver, test)
 		.clickRoundTrip()

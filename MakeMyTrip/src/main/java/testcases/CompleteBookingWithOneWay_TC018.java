@@ -20,7 +20,7 @@ public class CompleteBookingWithOneWay_TC018 extends MakeMyTripWrappers {
 	}
 	
 	@Test
-	public void searchDomesticFlightsTC011() throws Throwable{
+	public void CompleteOnewayBooking() throws Throwable{
 
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()

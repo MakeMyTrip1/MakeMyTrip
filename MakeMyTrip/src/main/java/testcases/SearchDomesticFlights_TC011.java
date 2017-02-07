@@ -21,7 +21,7 @@ public class SearchDomesticFlights_TC011 extends MakeMyTripWrappers{
 	}
 	
 	@Test
-	public void searchDomesticFlightsTC011(){
+	public void searchDomesticFlights(){
 		
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()

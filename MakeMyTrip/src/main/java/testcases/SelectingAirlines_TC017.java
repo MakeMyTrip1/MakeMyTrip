@@ -21,7 +21,7 @@ public class SelectingAirlines_TC017 extends MakeMyTripWrappers{
 	}
 	
 	@Test
-	public void selectingNoOFOption(){
+	public void selectingAirLines(){
 		
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()

@@ -21,7 +21,7 @@ public class SelectingDepartureDimeFromOption_TC016 extends MakeMyTripWrappers{
 	}
 	
 	@Test
-	public void selectingNoOFOption(){
+	public void selectFlightTimings(){
 		
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()

@@ -21,7 +21,7 @@ public class SearchInternationalFlightsForOneWay_TC013 extends MakeMyTripWrapper
 	}
 
 	@Test
-	public void searchInternationalFlights() throws Throwable{
+	public void searchInternationalFlightsOneWay() throws Throwable{
 
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()

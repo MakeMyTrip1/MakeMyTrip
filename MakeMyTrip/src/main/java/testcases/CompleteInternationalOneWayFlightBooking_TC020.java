@@ -20,17 +20,23 @@ public class CompleteInternationalOneWayFlightBooking_TC020 extends MakeMyTripWr
 	}
 	
 	@Test
-	public void searchDomesticFlightsTC011() throws Throwable{
+	public void CompleteInternationalOnewayTrip() throws Throwable{
 
 		new DomesticFlight(driver, test)
-		.clickRoundTrip()
+		.clickOneWayTrip()
 		.enterDepartureCity("Chennai (MAA)")
-		.enterDestinationCity("Dubai (DXB)")
+		.enterDestinationCity("Bangkok (BKK)")
 		.selectDepartureDate()
 		.clickSearchForInternational()
 		.clickBookNowButtonInternational()
 		.enterMailIdInternational("Rh@gmail.com")
-		.clickContinueAsGuestInInternational();
+		.clickContinueAsGuestInInternational()
+		.enterFirstNameInInternational("Kerthu")
+		.enterSurNameInInternational("Kumar")
+		
+		.enterPhoneNumberInInternational("9632589658")
+		.uncheckTravelServicesInInternational()
+		.clickPaymentInInternational();
 		
 	}
 

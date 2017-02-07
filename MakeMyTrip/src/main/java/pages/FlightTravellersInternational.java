@@ -12,8 +12,10 @@ public class FlightTravellersInternational extends MakeMyTripWrappers{
 
 		this.driver = driver;
 		this.test = test;
-
-		if(!verifyTitle("International Flights Air Tickets, Cheap International	Air fares at MakeMyTrip")){
+		
+		driver.getTitle();
+		
+		if(!verifyTitle("International Flights Air Tickets, Cheap International Air fares at MakeMyTrip")){
 
 			reportStep("This page is not International Flight Travellers Page", "FAIL");
 		}
@@ -34,6 +36,11 @@ public class FlightTravellersInternational extends MakeMyTripWrappers{
 	public FlightTravellersInternational enterPhoneNumberInInternational(String phoneNumber){
 
 		enterByXpath("//div[@class = 'col-xs-10 col-md-9']/input", phoneNumber);
+		return this;
+	}
+	
+	public FlightTravellersInternational selectNationality(){
+		
 		return this;
 	}
 
