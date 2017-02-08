@@ -5,31 +5,32 @@ import org.testng.annotations.Test;
 
 import pages.Dashboard;
 import pages.DomesticFlight;
+import pages.FlightSelect;
 import wrappers.MakeMyTripWrappers;
 
-public class SearchInternationalFlightsForRoundTrip_TC014 extends MakeMyTripWrappers{
-	
+public class TC015_SelectingNoOfStopsOption extends MakeMyTripWrappers{
+
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Search International Flights";
-		testDescription = "Search International Flights for RoundTrip";
+		testCaseName = "Selecting No of stops option";
+		testDescription = "Book a ticket by selecting No of stops option";
 		category = "smoke";
 		authors = "Rajesh";
 		url="https://www.makemytrip.com/flights";
-		dataSheetName = "TC014";
+		dataSheetName = "TC015";
 	}
-	
+
 	@Test
-	public void searchInternationalFlightsForRT(){
-		
+	public void selectingNoOFOption(){
+
 		new DomesticFlight(driver, test)
-		.clickRoundTrip()
+		.clickOneWayTrip()
 		.enterDepartureCity("Chennai (MAA)")
-		.enterDestinationCity("Bangkok, Thailand (BKK)")
+		.enterDestinationCity("New Delhi (DEL)")
 		.selectDepartureDate()
-		.selectReturnDate()
-		.clickSearchForInternational();
+		.clickSearchFlight()
+		.selectNoOfStops();
 		
 	}
 

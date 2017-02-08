@@ -125,7 +125,7 @@ public class InternationalFlight extends MakeMyTripWrappers{
 	}
 
 	//select search flight button
-	public FlightSelectForInternational clickSearchFlight()
+	public FlightSelectForInternational clickSearchFlightInternational()
 	{
 		clickById("flights_submit");
 		return new FlightSelectForInternational( driver,  test);

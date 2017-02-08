@@ -7,30 +7,30 @@ import pages.Dashboard;
 import pages.DomesticFlight;
 import wrappers.MakeMyTripWrappers;
 
-public class SearchDomesticFlightsForRountTrip_TC012 extends MakeMyTripWrappers{
-
+public class TC014_SearchInternationalFlightsForRoundTrip extends MakeMyTripWrappers{
+	
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Search Domestic Flights";
-		testDescription = "Search Domestic Flights for Return Trip";
+		testCaseName = "Search International Flights";
+		testDescription = "Search International Flights for RoundTrip";
 		category = "smoke";
 		authors = "Rajesh";
 		url="https://www.makemytrip.com/flights";
-		dataSheetName = "TC012";
+		dataSheetName = "TC014";
 	}
 	
 	@Test
-	public void searchDomesticFlightsForRTTC012(){
+	public void searchInternationalFlightsForRT(){
 		
 		new DomesticFlight(driver, test)
 		.clickRoundTrip()
 		.enterDepartureCity("Chennai (MAA)")
-		.enterDestinationCity("New Delhi (DEL)")
+		.enterDestinationCity("Bangkok, Thailand (BKK)")
 		.selectDepartureDate()
 		.selectReturnDate()
-		.clickSearchForRT();
-			
+		.clickSearchForInternational();
+		
 	}
-	
+
 }

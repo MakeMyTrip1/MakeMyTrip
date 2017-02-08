@@ -5,33 +5,30 @@ import org.testng.annotations.Test;
 
 import pages.Dashboard;
 import pages.DomesticFlight;
-import pages.FlightSelect;
 import wrappers.MakeMyTripWrappers;
 
-public class SelectingNoOfStopsOption_TC015 extends MakeMyTripWrappers{
-
+public class TC011_SearchDomesticFlights extends MakeMyTripWrappers{
+	
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Selecting No of stops option";
-		testDescription = "Book a ticket by selecting No of stops option";
+		testCaseName = "Search Domestic Flights";
+		testDescription = "Search Domestic Flights for OneWay";
 		category = "smoke";
 		authors = "Rajesh";
 		url="https://www.makemytrip.com/flights";
-		dataSheetName = "TC015";
+		dataSheetName = "TC011";
 	}
-
+	
 	@Test
-	public void selectingNoOFOption(){
-
+	public void searchDomesticFlights(){
+		
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()
 		.enterDepartureCity("Chennai (MAA)")
 		.enterDestinationCity("New Delhi (DEL)")
 		.selectDepartureDate()
-		.clickSearchFlight()
-		.selectNoOfStops();
-		
+		.clickSearchFlight();
+			
 	}
-
 }

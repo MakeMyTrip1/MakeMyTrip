@@ -37,5 +37,14 @@ public class FlightSelectForInternational extends MakeMyTripWrappers{
 		return this;
 	}
 
+	public FlightReviewForInternational clickBookNowButtonInternational(){
+
+		if(verifyTitle("International Flights Air Tickets, Cheap International Air fares at MakeMyTrip")){
+			clickByLink("Book");
+		}
+
+		clickByLink("Book Now");
+		return new FlightReviewForInternational(driver, test);
+	}
 
 }

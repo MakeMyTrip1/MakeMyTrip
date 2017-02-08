@@ -10,8 +10,8 @@ public class FlightReviewForInternational extends MakeMyTripWrappers{
 
 		this.driver = driver;
 		this.test = test;
-
-		if(!verifyTitle("International Flights Air Tickets, Cheap International	Air fares at MakeMyTrip")){
+		
+		if(!verifyTitle("International Flights Air Tickets, Cheap International Air fares at MakeMyTrip")){
 
 			reportStep("This is not Internationl Flight Review Page", "FAIL");
 		}

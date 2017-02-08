@@ -5,33 +5,30 @@ import org.testng.annotations.Test;
 
 import pages.Dashboard;
 import pages.DomesticFlight;
-import pages.FlightSelect;
 import wrappers.MakeMyTripWrappers;
 
-public class SelectingAirlines_TC017 extends MakeMyTripWrappers{
-	
+public class TC013_SearchInternationalFlightsForOneWay extends MakeMyTripWrappers{
+
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Selecting Airlines";
-		testDescription = "To verify user to able to book a ticket by selecting Airlines option";
+		testCaseName = "Search International Flights";
+		testDescription = "Search International Flights for OneWay";
 		category = "smoke";
 		authors = "Rajesh";
 		url="https://www.makemytrip.com/flights";
+		dataSheetName = "TC013";
 	}
-	
+
 	@Test
-	public void selectingNoOFOption(){
-		
+	public void searchInternationalFlightsOneWay() throws Throwable{
+
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()
 		.enterDepartureCity("Chennai (MAA)")
-		.enterDestinationCity("New Delhi (DEL)")
+		.enterDestinationCity("Bangkok, Thailand (BKK)")
 		.selectDepartureDate()
-		.clickSearchFlight()
-		.selectAirlines();
-		
-		
+		.clickSearchForInternational();
 	}
 
 }
