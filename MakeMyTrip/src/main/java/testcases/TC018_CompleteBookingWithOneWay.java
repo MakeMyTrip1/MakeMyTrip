@@ -34,8 +34,7 @@ public class TC018_CompleteBookingWithOneWay extends MakeMyTripWrappers {
 		.enterFirstName("Kiran")
 		.enterLastName("Das")
 		.selectGenderMale()
-		.enterPhoneNumber("8963256985")
-		.selectContinueToPaymaent();
+		.enterPhoneNumber("8963256985");
 		
 	}
 	

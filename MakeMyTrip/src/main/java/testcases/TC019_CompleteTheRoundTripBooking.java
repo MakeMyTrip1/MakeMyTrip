@@ -35,8 +35,7 @@ public class TC019_CompleteTheRoundTripBooking extends MakeMyTripWrappers{
 		.enterFirstName("Kiran")
 		.enterLastName("Das")
 		.selectGenderMale()
-		.enterPhoneNumber("8963256985")
-		.selectContinueToPaymaent();
+		.enterPhoneNumber("8963256985");
 		
 	}
 	

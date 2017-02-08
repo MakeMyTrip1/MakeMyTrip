@@ -100,8 +100,9 @@ public class DomesticFlight extends MakeMyTripWrappers {
 			departureDate();
 		}else
 		{
-			clickById("hp-widget__depart");
-			clickByLink("25");
+			departureDate();
+			/*clickById("hp-widget__depart");
+			clickByLink("25");*/
 			//driver.findElement(By.linkText("28")).click();
 		}
 		return this;
@@ -115,7 +116,8 @@ public class DomesticFlight extends MakeMyTripWrappers {
 		}else
 		{
 			//clickById("hp-widget__depart");
-			clickByLink("28");
+			//clickByLink("28");
+			returnDate();
 		}
 		return this;
 	}
