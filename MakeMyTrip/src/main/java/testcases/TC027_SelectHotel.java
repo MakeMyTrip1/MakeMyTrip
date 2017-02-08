@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 import pages.Dashboard;
 import wrappers.MakeMyTripWrappers;
 
-public class TC028 extends MakeMyTripWrappers
+public class TC027_SelectHotel extends MakeMyTripWrappers
 {
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Room book";
-		testDescription = "To verify user is able to book a room based on the requirement";
+		testCaseName = "Hotel Select";
+		testDescription = "To verify user is able to select any the hotel which is displayed";
 		category = "smoke";
 		authors = "Jayaram";
 		url="https://www.makemytrip.com/flights-hotels/";
@@ -20,26 +20,24 @@ public class TC028 extends MakeMyTripWrappers
 	}
 	
 	@Test
-	public void RoomBook() throws InterruptedException
+	public void HotelSelect() throws InterruptedException
 	{
-		driver.manage().deleteAllCookies();
 		new Dashboard(driver, test)
 		.clickLoginMenu()
 		.enterEmailIdForLogin("aaavig@yopmail.com")
 		.enterPasswordForLogin("aaavig")
 		.clickContinue()
         .selectHotelsTab()
-        .selectInternationalOptionInHotel()
+        //.selectInternationalOptionInHotel()
         .enterCity("Chennai")
         .enterCheckInDate()
         .enterCheckOutDate()
-        .selectNoOfAdultsInHotel(2)
-        .selectNoOfChildrenInHotel(2)
+        //.selectNoOfAdultsInHotel(2)
+        //.selectNoOfChildrenInHotel(2)
         .clickSearchHotel()
-        .ClickHotel()
-        .ClickRoom()
-        .BookRoom();
+        .ClickHotel();
 		
         
-      }
+        
+        }
 }

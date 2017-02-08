@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -25,12 +26,13 @@ public class HotelReviewPage  extends MakeMyTripWrappers {
 	//Enter Email id in sweet alert
 			public HotelReviewPage EnterEmailID(String data){
 				enterById("username", data);
+				driver.findElementById("username").sendKeys(Keys.TAB);
 				return this;
 			}
 			
 	//Enter password in sweet alert
 			public HotelReviewPage EnterPassword(String data){
-		    enterById("password", data);
+		    enterByXpath("//*[@id='password']", data);
 				return this;
 			}
 			
@@ -42,7 +44,7 @@ public class HotelReviewPage  extends MakeMyTripWrappers {
 
 	//Click on "Continue as Guest" button
 			public HotelTravellersPage ClickContinueGuestButton(){
-			    clickByLink("Continue as Guest");
+			    clickByXpath("//*[@id='contAsGuest']");
 				return new HotelTravellersPage(driver,test);
 			}
 

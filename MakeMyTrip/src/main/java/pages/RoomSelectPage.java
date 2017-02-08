@@ -21,7 +21,12 @@ public class RoomSelectPage extends MakeMyTripWrappers{
 	
 	//Select a room which is displayed
 		public RoomSelectPage ClickRoom(){
-			clickByLink("Select Room");
+			try {
+				clickByLink("Select Room");
+				
+			} catch (Exception e) {
+				clickByLink("SELECT ROOM");
+			}
 			return this;
 		}
 	
@@ -36,7 +41,12 @@ public class RoomSelectPage extends MakeMyTripWrappers{
 	 
 		//Click on 'Book now" button
 			public HotelReviewPage BookRoom(){
-				clickByLinkNoSnap("Book Now");
-				return new HotelReviewPage(driver,test);			
+				try {
+					clickByLinkNoSnap("Book Now");
+					
+				} catch (Exception e) {
+					clickByLinkNoSnap("BOOK NOW");
+				}			
+			return new HotelReviewPage(driver,test);
 }
 }

@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 import pages.Dashboard;
 import wrappers.MakeMyTripWrappers;
 
-public class TC027 extends MakeMyTripWrappers
+public class TC026_SearchInternationalHotel extends MakeMyTripWrappers
 {
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Hotel Select";
-		testDescription = "To verify user is able to select any the hotel which is displayed";
+		testCaseName = "International Hotel search";
+		testDescription = "To verify user to able search hotels by entering mandatory details with international option";
 		category = "smoke";
 		authors = "Jayaram";
 		url="https://www.makemytrip.com/flights-hotels/";
@@ -20,7 +20,7 @@ public class TC027 extends MakeMyTripWrappers
 	}
 	
 	@Test
-	public void HotelSelect() throws InterruptedException
+	public void InternationalHotelSearch()
 	{
 		new Dashboard(driver, test)
 		.clickLoginMenu()
@@ -28,15 +28,13 @@ public class TC027 extends MakeMyTripWrappers
 		.enterPasswordForLogin("aaavig")
 		.clickContinue()
         .selectHotelsTab()
-        .selectInternationalOptionInHotel()
-        .enterCity("Chennai")
+        //.selectInternationalOptionInHotel()
+        .enterCity("New South Wales, Australia")
         .enterCheckInDate()
         .enterCheckOutDate()
-        .selectNoOfAdultsInHotel(2)
-        .selectNoOfChildrenInHotel(2)
-        .clickSearchHotel()
-        .ClickHotel();
-		
+        //.selectNoOfAdultsInHotel(2)
+        //.selectNoOfChildrenInHotel(2)
+        .clickSearchHotel();
         
         
         }
