@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.Dashboard;
 import wrappers.MakeMyTripWrappers;
 
-public class TC002 extends MakeMyTripWrappers
+public class TC002_SignUpError extends MakeMyTripWrappers
 {
 	@BeforeClass
 	public void setValues(){

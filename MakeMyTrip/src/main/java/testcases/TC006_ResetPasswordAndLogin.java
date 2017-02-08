@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.Dashboard;
 import wrappers.MakeMyTripWrappers;
 
-public class TC006 extends MakeMyTripWrappers {
+public class TC006_ResetPasswordAndLogin extends MakeMyTripWrappers {
 
 	@BeforeClass
 	public void setValues(){

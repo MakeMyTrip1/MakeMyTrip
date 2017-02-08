@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 import pages.Dashboard;
 import wrappers.MakeMyTripWrappers;
 
-public class TC010 extends MakeMyTripWrappers{
+public class TC009_ChangePassword extends MakeMyTripWrappers {
 
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Invalid Current Password Error Message";
-		testDescription = "To verify error message is displayed if invalid current password is entered";
+		testCaseName = "Able to successfully change password in Profile page";
+		testDescription = "To verify user is able to change password from profile page";
 		category = "smoke";
 		authors = "Vignesh";	
 		url="https://www.makemytrip.com/flights-hotels/";
@@ -20,7 +20,7 @@ public class TC010 extends MakeMyTripWrappers{
 	}
 	
 	@Test
-	public void InvalidCurrentPassword() throws InterruptedException
+	public void ChangePassword() throws InterruptedException
 	{
 		new Dashboard(driver, test)
 		.clickLoginMenu()
@@ -30,15 +30,12 @@ public class TC010 extends MakeMyTripWrappers{
 		.clickLoginMenu()
 		.clickMyProfile()
 		.MySettings()
-		.OldPassword("aaavig1")
+		.OldPassword("aaavig")
 		.NewPassword("aaavig")
 		.ReconfirmPassword("aaavig")
 		.PasswordSubmitbutton()
-		.VerifyPasswordNotCorrectTextErrorMsg("The old Password is not correct");
+		.VerifyPasswordChangedTextMsg("Your Password has been Changed.");
 	}
 }
 
-
-
-	
 
