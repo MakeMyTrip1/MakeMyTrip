@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 import pages.Dashboard;
 import wrappers.MakeMyTripWrappers;
 
-public class TC030 extends MakeMyTripWrappers
+public class TC031_CompleteHotelBooking extends MakeMyTripWrappers
 {
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Login to Book hotel";
-		testDescription = "To verify user to able to login the account from review page by clicking on Login & continue button";
+		testCaseName = "Navigate to payment page";
+		testDescription = "To verify user is able to fill all mandatory details in travellers page and navigate to payment page";
 		category = "smoke";
 		authors = "Jayaram";
 		url="https://www.makemytrip.com/flights-hotels/";
@@ -20,29 +20,35 @@ public class TC030 extends MakeMyTripWrappers
 	}
 	
 	@Test
-	public void BooKWithLogin() throws InterruptedException
+	public void PagmentPage() throws InterruptedException
 	{
 		driver.manage().deleteAllCookies();
 		new Dashboard(driver, test)
 		.clickLoginMenu()
-		.enterEmailIdForLogin("bbbvig@yopmail.com")
+		.enterEmailIdForLogin("cccvig@yopmail.com")
 		.enterPasswordForLogin("bbbvig")
 		.clickContinue()
         .selectHotelsTab()
-        .selectInternationalOptionInHotel()
+        //.selectInternationalOptionInHotel()
         .enterCity("Chennai")
         .enterCheckInDate()
         .enterCheckOutDate()
-        .selectNoOfAdultsInHotel(2)
-        .selectNoOfChildrenInHotel(2)
+        //.selectNoOfAdultsInHotel(2)
+        //.selectNoOfChildrenInHotel(2)
         .clickSearchHotel()
         .ClickHotel()
         .ClickRoom()
         .BookRoom()
         .Clickloginbutton()
-        .EnterEmailID("aaavig@yopmail.com")
-        .EnterPassword("aaavig")
-        .ClickContinueButton();
+        .EnterEmailID("bbbvig@yopmail.com")
+        .EnterPassword("bbbvig")
+        .ClickContinueButton()
+        .ClickContinueGuestButton()
+        .Enterfirstname("AAA")
+        .Enterlastname("BBB")
+        .EnterEmailID("AAA@yopmail.com")
+        .EnterMobilenumber("9962272871")
+        .ClickPaymentbutton();
 		
         
       }

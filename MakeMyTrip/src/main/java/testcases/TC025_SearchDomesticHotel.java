@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 import pages.Dashboard;
 import wrappers.MakeMyTripWrappers;
 
-public class TC029 extends MakeMyTripWrappers
+public class TC025_SearchDomesticHotel extends MakeMyTripWrappers
 {
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "As guest";
-		testDescription = "To verify user is able is able to navigate to travellers page as a guest";
+		testCaseName = "Domestic Hotel search";
+		testDescription = "To verify user to able search hotels by entering mandatory details with dosmestic option";
 		category = "smoke";
 		authors = "Jayaram";
 		url="https://www.makemytrip.com/flights-hotels/";
@@ -20,28 +20,22 @@ public class TC029 extends MakeMyTripWrappers
 	}
 	
 	@Test
-	public void BookAsGuest() throws InterruptedException
+	public void DomesticHotelSearch()
 	{
-		driver.manage().deleteAllCookies();
 		new Dashboard(driver, test)
 		.clickLoginMenu()
 		.enterEmailIdForLogin("aaavig@yopmail.com")
 		.enterPasswordForLogin("aaavig")
 		.clickContinue()
         .selectHotelsTab()
-        .selectInternationalOptionInHotel()
-        .enterCity("Chennai")
+        //.selectDomesticOptionInHotel()
+        .enterCity("Chennai,India")
         .enterCheckInDate()
         .enterCheckOutDate()
-        .selectNoOfAdultsInHotel(2)
-        .selectNoOfChildrenInHotel(2)
-        .clickSearchHotel()
-        .ClickHotel()
-        .ClickRoom()
-        .BookRoom()
-        .ClickContinueGuestButton();
-		
+        /*.selectNoOfAdultsInHotel(2)
+        .selectNoOfChildrenInHotel(2)*/
+        .clickSearchHotel();
         
-      }
+        
+        }
 }
-

@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 import pages.Dashboard;
 import wrappers.MakeMyTripWrappers;
 
-public class TC031 extends MakeMyTripWrappers
+public class TC030_LoginAndContinue extends MakeMyTripWrappers
 {
 	@BeforeClass
 	public void setValues(){
 		browserName = "chrome";
-		testCaseName = "Navigate to payment page";
-		testDescription = "To verify user is able to fill all mandatory details in travellers page and navigate to payment page";
+		testCaseName = "Login to Book hotel";
+		testDescription = "To verify user to able to login the account from review page by clicking on Login & continue button";
 		category = "smoke";
 		authors = "Jayaram";
 		url="https://www.makemytrip.com/flights-hotels/";
@@ -20,7 +20,7 @@ public class TC031 extends MakeMyTripWrappers
 	}
 	
 	@Test
-	public void PagmentPage() throws InterruptedException
+	public void BooKWithLogin() throws InterruptedException
 	{
 		driver.manage().deleteAllCookies();
 		new Dashboard(driver, test)
@@ -29,12 +29,12 @@ public class TC031 extends MakeMyTripWrappers
 		.enterPasswordForLogin("bbbvig")
 		.clickContinue()
         .selectHotelsTab()
-        .selectInternationalOptionInHotel()
+        //.selectInternationalOptionInHotel()
         .enterCity("Chennai")
         .enterCheckInDate()
         .enterCheckOutDate()
-        .selectNoOfAdultsInHotel(2)
-        .selectNoOfChildrenInHotel(2)
+        //.selectNoOfAdultsInHotel(2)
+        //.selectNoOfChildrenInHotel(2)
         .clickSearchHotel()
         .ClickHotel()
         .ClickRoom()
@@ -42,13 +42,7 @@ public class TC031 extends MakeMyTripWrappers
         .Clickloginbutton()
         .EnterEmailID("aaavig@yopmail.com")
         .EnterPassword("aaavig")
-        .ClickContinueButton()
-        .ClickContinueGuestButton()
-        .Enterfirstname("AAA")
-        .Enterlastname("BBB")
-        .EnterEmailID("AAA@yopmail.com")
-        .EnterMobilenumber("9962272871")
-        .ClickPaymentbutton();
+        .ClickContinueButton();
 		
         
       }
