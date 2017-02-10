@@ -46,7 +46,7 @@ public class TC031_CompleteHotelBooking extends MakeMyTripWrappers
         .ClickContinueGuestButton()
         .Enterfirstname("AAA")
         .Enterlastname("BBB")
-        .EnterEmailID("AAA@yopmail.com")
+        //.EnterEmailID("AAA@yopmail.com")
         .EnterMobilenumber("9962272871")
         .ClickPaymentbutton();
 		
