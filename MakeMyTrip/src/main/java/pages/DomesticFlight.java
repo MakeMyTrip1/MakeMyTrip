@@ -87,7 +87,7 @@ public class DomesticFlight extends MakeMyTripWrappers {
 		else
 		{
 			enterById("hp-widget__sTo", destination_city);
-
+			driver.findElementById("hp-widget__sTo").sendKeys(Keys.TAB);
 		}
 		return this; 
 	}
@@ -100,9 +100,9 @@ public class DomesticFlight extends MakeMyTripWrappers {
 			departureDate();
 		}else
 		{
-			departureDate();
-			/*clickById("hp-widget__depart");
-			clickByLink("25");*/
+			//departureDate();
+			clickById("hp-widget__depart");
+			clickByLink("27");
 			//driver.findElement(By.linkText("28")).click();
 		}
 		return this;
@@ -115,9 +115,9 @@ public class DomesticFlight extends MakeMyTripWrappers {
 			returnDate();
 		}else
 		{
-			//clickById("hp-widget__depart");
-			//clickByLink("28");
-			returnDate();
+			clickById("hp-widget__depart");
+			clickByLink("28");
+			//returnDate();
 		}
 		return this;
 	}
