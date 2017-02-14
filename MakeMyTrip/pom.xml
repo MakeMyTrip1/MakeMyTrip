@@ -6,11 +6,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    </properties>  
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -48,6 +48,12 @@
 			<artifactId>maven-surefire-plugin</artifactId>
 			<version>2.19.1</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.10</version>
+		</dependency>
+
 	</dependencies>
 </project>
