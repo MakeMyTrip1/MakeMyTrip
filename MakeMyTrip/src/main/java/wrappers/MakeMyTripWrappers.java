@@ -32,7 +32,7 @@ public class MakeMyTripWrappers extends GenericWrappers{
 		test = startTestCase(testCaseName, testDescription);
 		test.assignCategory(category);
 		test.assignAuthor(authors);
-		invokeApp(browserName,url);
+		invokeApp(browserName,url,false);
 	}
 		
 	@AfterSuite

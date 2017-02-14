@@ -30,11 +30,11 @@ import com.relevantcodes.extentreports.ExtentTest;
 import utils.Reporter;
 
 public class GenericWrappers extends Reporter implements Wrappers {
-	
+
 	public GenericWrappers(RemoteWebDriver driver, ExtentTest test) {
-        this.driver = driver;
-        this.test=test;
-   }
+		this.driver = driver;
+		this.test=test;
+	}
 
 	public WebDriverWait wait;
 	public RemoteWebDriver driver;
@@ -83,22 +83,35 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	public void invokeApp(String browser) {
 		invokeApp(browser,false);
 	}
-	
-	
-	public void invokeApp(String browser,String url)
+
+
+	public void invokeApp(String browser,String url, boolean bremote)
 	{
 		try {
-			if(browser.equalsIgnoreCase("chrome")){
-				System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-				driver = new ChromeDriver();
-				driver.manage().deleteAllCookies();
-			}else{
-				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
-				driver = new FirefoxDriver();
-				Thread.sleep(2000);
-				driver.manage().deleteAllCookies();
+			DesiredCapabilities dc = new DesiredCapabilities();
+			dc.setBrowserName(browser);
+			dc.setPlatform(Platform.WINDOWS);
+
+			if(bremote)
+			{
+				driver = new RemoteWebDriver(new URL("http://"+sHubUrl+":"+sHubPort+"/wd/hub"), dc);
 			}
-//			Process p=Runtime.getRuntime().exec("cmd /c start TempClean.bat",null, new File("./Temp/TempClean.bat"));
+
+			else
+			{
+				if(browser.equalsIgnoreCase("chrome")){
+					System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+					driver = new ChromeDriver();
+					driver.manage().deleteAllCookies();
+				}
+				else{
+					System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
+					driver = new FirefoxDriver();
+					Thread.sleep(2000);
+					driver.manage().deleteAllCookies();
+				}
+			}
+			//			Process p=Runtime.getRuntime().exec("cmd /c start TempClean.bat",null, new File("./Temp/TempClean.bat"));
 			new WebDriverWait(driver, 30);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
@@ -113,8 +126,8 @@ public class GenericWrappers extends Reporter implements Wrappers {
 		}
 
 	}
-	
-	
+
+
 	/**
 	 * This method will launch the browser in grid node (if remote) and maximise the browser and set the
 	 * wait for 30 seconds and load the url 
@@ -241,8 +254,8 @@ public class GenericWrappers extends Reporter implements Wrappers {
 		}
 		return bReturn;
 	}
-	
-	
+
+
 	//Added new method
 	public boolean verifyURL(String url){
 		boolean bReturn = false;
@@ -355,7 +368,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	 */
 	public void clickById(String id) {
 		try{
-			
+
 			driver.findElement(By.id(id)).click();
 			reportStep("The element with id: "+id+" is clicked.", "PASS");
 
@@ -405,7 +418,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 			reportStep("The element with link name: "+name+" could not be clicked.", "FAIL");
 		}
 	}
-	
+
 	public void clickByLinkNoSnap(String name) {
 		try{
 			driver.findElement(By.linkText(name)).click();
@@ -565,7 +578,7 @@ public class GenericWrappers extends Reporter implements Wrappers {
 		}
 
 	}
-	
+
 
 	public String getAlertText() {		
 		String text = null;
@@ -602,14 +615,14 @@ public class GenericWrappers extends Reporter implements Wrappers {
 		}
 		return number;
 	}
-	
-	
+
+
 	public String getTextByClass(String classVal) throws Exception {
 		// TODO Auto-generated method stub
 		String text="";
 		try {
-			 text=driver.findElementByClassName(classVal).getText();
-			
+			text=driver.findElementByClassName(classVal).getText();
+
 		} catch (NoSuchElementException e) {
 			System.out.println("The element :"+classVal+" not found");
 			throw new Exception("Element not found");
@@ -623,8 +636,8 @@ public class GenericWrappers extends Reporter implements Wrappers {
 	}
 
 
-	
-	
+
+
 
 }
 
