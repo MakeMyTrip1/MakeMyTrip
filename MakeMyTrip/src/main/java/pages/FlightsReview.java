@@ -37,8 +37,9 @@ public class FlightsReview extends MakeMyTripWrappers{
 		return this;
 	}
 
-	public FlightsReview verifyCouponErrorMessage(String erroMessage){
+	public FlightsReview verifyCouponErrorMessage(String erroMessage) throws Throwable{
 
+		Thread.sleep(2000);
 		System.out.println(driver.findElement(By.xpath("//span[@class='promo_txt ng-binding']")).getText());
 		verifyTextByXpath("//span[@class='promo_txt ng-binding']", erroMessage);
 		return this;
