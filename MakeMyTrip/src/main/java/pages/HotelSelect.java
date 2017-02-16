@@ -19,7 +19,8 @@ public class HotelSelect extends MakeMyTripWrappers{
 }
 	//Select a hotel which is displayed
 	public RoomSelectPage ClickHotel() throws InterruptedException{
-		clickByXpathNoSnap("//img[@class='img-responsive']");
+		//clickByXpathNoSnap("//img[@class='img-responsive']");
+		clickByXpathNoSnap("(//div[@class='card__BArea'])[1]");
 		switchToLastWindow();
 		return new RoomSelectPage(driver,test);
 	}

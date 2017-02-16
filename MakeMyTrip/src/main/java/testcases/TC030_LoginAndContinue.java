@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import pages.Dashboard;
+import pages.DomesticHotel;
 import wrappers.MakeMyTripWrappers;
 
 public class TC030_LoginAndContinue extends MakeMyTripWrappers
@@ -15,7 +16,7 @@ public class TC030_LoginAndContinue extends MakeMyTripWrappers
 		testDescription = "To verify user to able to login the account from review page by clicking on Login & continue button";
 		category = "smoke";
 		authors = "Jayaram";
-		url="https://www.makemytrip.com/flights-hotels/";
+		url="https://www.makemytrip.com/hotels/";
 		dataSheetName = "TC001";
 	}
 	
@@ -23,12 +24,12 @@ public class TC030_LoginAndContinue extends MakeMyTripWrappers
 	public void BooKWithLogin() throws InterruptedException
 	{
 		driver.manage().deleteAllCookies();
-		new Dashboard(driver, test)
-		.clickLoginMenu()
+		new DomesticHotel(driver, test)
+		/*.clickLoginMenu()
 		.enterEmailIdForLogin("bbbvig@yopmail.com")
 		.enterPasswordForLogin("bbbvig")
 		.clickContinue()
-        .selectHotelsTab()
+        .selectHotelsTab()*/
         //.selectInternationalOptionInHotel()
         .enterCity("Chennai")
         .enterCheckInDate()

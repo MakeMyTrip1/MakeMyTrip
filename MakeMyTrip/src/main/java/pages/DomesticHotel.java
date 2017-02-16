@@ -36,15 +36,15 @@ public class DomesticHotel extends MakeMyTripWrappers{
 		{
 			try 
 			{
-				driver.findElementById("from_city_data_box").click(); 
-				enterById("from_city_data_box", cityName);
-				driver.findElementById("from_city_data_box").sendKeys(Keys.TAB);				
-			} 
-			catch (Exception e)
-			{
 				driver.findElementById("hp-widget__sDest").click();
 				enterById("hp-widget__sDest", cityName);
-				driver.findElementById("hp-widget__sDest").sendKeys(Keys.TAB);					
+				driver.findElementById("hp-widget__sDest").sendKeys(Keys.TAB);		
+			} 
+			catch (Exception e)
+			{				
+				driver.findElementById("from_city_data_box").click(); 
+				enterById("from_city_data_box", cityName);
+				driver.findElementById("from_city_data_box").sendKeys(Keys.TAB);	
 			}		
 			return this;
 			
@@ -55,13 +55,14 @@ public class DomesticHotel extends MakeMyTripWrappers{
 		{
 			
 			try {
-				driver.findElementById("start_date_sec").click();
-				driver.findElementByXPath("//span[@class='ui-icon ui-icon-circle-triangle-e']").click();
-				driver.findElementByLinkText("23").click();
-			} catch (Exception e) {
 				//driver.findElementById("hp-widget__chkIn").click();
 				driver.findElementByXPath("//span[@class='ui-icon ui-icon-circle-triangle-e']").click();
-				driver.findElementByLinkText("23").click();
+				driver.findElementByLinkText("10").click();
+			} catch (Exception e) {
+				
+				driver.findElementById("start_date_sec").click();
+				driver.findElementByXPath("//span[@class='ui-icon ui-icon-circle-triangle-e']").click();
+				driver.findElementByLinkText("10").click();
 			}	
 			return this;
 		}
@@ -72,13 +73,13 @@ public class DomesticHotel extends MakeMyTripWrappers{
 		{
 			
 			try {
-			     driver.findElementById("return_date_sec").click();
-                 driver.findElementByXPath("//span[@class='ui-icon ui-icon-circle-triangle-e']").click();
-                 driver.findElementByLinkText("23").click();
-				} catch (Exception e) {
-					/*driver.findElementById("hp-widget__chkIn").click();
-					driver.findElementByXPath("//span[@class='ui-icon ui-icon-circle-triangle-e']").click();*/
-					driver.findElementByLinkText("26").click();
+				/*driver.findElementById("hp-widget__chkIn").click();
+				driver.findElementByXPath("//span[@class='ui-icon ui-icon-circle-triangle-e']").click();*/
+				driver.findElementByLinkText("28").click();
+				} catch (Exception e) {					
+					 driver.findElementById("return_date_sec").click();
+	                 driver.findElementByXPath("//span[@class='ui-icon ui-icon-circle-triangle-e']").click();
+	                 driver.findElementByLinkText("28").click();
 				}
 			return this;
 		}
@@ -126,9 +127,9 @@ public class DomesticHotel extends MakeMyTripWrappers{
 			
 			{
 				try {
-					driver.findElementById("hotels_submit").click();
-				} catch (Exception e) {
 					driver.findElementById("searchBtn").click();
+				} catch (Exception e) {					
+					driver.findElementById("hotels_submit").click();
 				}
 					return new HotelSelect( driver,  test);
 				}

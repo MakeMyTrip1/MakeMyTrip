@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import pages.Dashboard;
+import pages.DomesticHotel;
 import wrappers.MakeMyTripWrappers;
 
 public class TC028_BookRoom extends MakeMyTripWrappers
@@ -15,7 +16,7 @@ public class TC028_BookRoom extends MakeMyTripWrappers
 		testDescription = "To verify user is able to book a room based on the requirement";
 		category = "smoke";
 		authors = "Jayaram";
-		url="https://www.makemytrip.com/flights-hotels/";
+		url="https://www.makemytrip.com/hotels/";
 		dataSheetName = "TC001";
 	}
 	
@@ -23,12 +24,12 @@ public class TC028_BookRoom extends MakeMyTripWrappers
 	public void RoomBook() throws InterruptedException
 	{
 		driver.manage().deleteAllCookies();
-		new Dashboard(driver, test)
-		.clickLoginMenu()
+		new DomesticHotel(driver, test)
+		/*.clickLoginMenu()
 		.enterEmailIdForLogin("aaavig@yopmail.com")
 		.enterPasswordForLogin("aaavig")
 		.clickContinue()
-        .selectHotelsTab()
+        .selectHotelsTab()*/
         //.selectInternationalOptionInHotel()
         .enterCity("Chennai")
         .enterCheckInDate()

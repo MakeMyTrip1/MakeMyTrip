@@ -14,18 +14,20 @@ public class RoomSelectPage extends MakeMyTripWrappers{
 		this.driver = driver;
 		this.test = test;
 		Thread.sleep(5000);
+		System.out.println(driver.getCurrentUrl());
 		if(!verifyURL("hotelz.makemytrip.com")){
+			if (!verifyURL("www.makemytrip.com/mmthtl")){
 			reportStep("This is not the URL ", "FAIL");	
+			}
 		}	
 }
 	
 	//Select a room which is displayed
 		public RoomSelectPage ClickRoom(){
 			try {
+				clickByLink("SELECT ROOM");				
+			} catch (Exception e) {				
 				clickByLink("Select Room");
-				
-			} catch (Exception e) {
-				clickByLink("SELECT ROOM");
 			}
 			return this;
 		}
@@ -40,12 +42,11 @@ public class RoomSelectPage extends MakeMyTripWrappers{
 //	}
 	 
 		//Click on 'Book now" button
-			public HotelReviewPage BookRoom(){
+			public HotelReviewPage BookRoom() throws InterruptedException{
 				try {
-					clickByLinkNoSnap("Book Now");
-					
+					clickByLinkNoSnap("BOOK NOW");															
 				} catch (Exception e) {
-					clickByLinkNoSnap("BOOK NOW");
+					clickByLinkNoSnap("Book Now");
 				}			
 			return new HotelReviewPage(driver,test);
 }
