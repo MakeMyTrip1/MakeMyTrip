@@ -1,6 +1,9 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import com.relevantcodes.extentreports.ExtentTest;
 import wrappers.MakeMyTripWrappers;
 
@@ -47,8 +50,9 @@ public class FlightReviewForInternational extends MakeMyTripWrappers{
 		return this;
 	}
 
-	public FlightTravellersInternational clickContinueAsGuestInInternational(){
+	public FlightTravellersInternational clickContinueAsGuestInInternational() throws Throwable{
 
+		Thread.sleep(5000);
 		clickByLink("Continue as Guest");
 		return new FlightTravellersInternational(driver, test);
 	}

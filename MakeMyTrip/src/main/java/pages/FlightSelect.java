@@ -6,6 +6,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.relevantcodes.extentreports.ExtentTest;
 
 import wrappers.MakeMyTripWrappers;
@@ -50,7 +54,9 @@ public class FlightSelect extends MakeMyTripWrappers {
 	}
 	
 	public FlightSelect selectModifySearch(){
-		
+	
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class= 'col-md-2 col-sm-2 modify']/a"))));
 		clickByXpath("//div[@class= 'col-md-2 col-sm-2 modify']/a");		
 		return this;
 	}
