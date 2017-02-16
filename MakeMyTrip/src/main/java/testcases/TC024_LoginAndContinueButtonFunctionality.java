@@ -20,7 +20,7 @@ public class TC024_LoginAndContinueButtonFunctionality extends MakeMyTripWrapper
 	}
 
 	@Test
-	public void loginAndContinueButtonFunction(){
+	public void loginAndContinueButtonFunction() throws Throwable{
 
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()

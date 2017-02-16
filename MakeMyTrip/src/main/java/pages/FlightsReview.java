@@ -81,9 +81,8 @@ public class FlightsReview extends MakeMyTripWrappers{
 		return this;
 	}
 
-	public FlightsTraveller clickContinueAsGuest(){
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.linkText("Continue as Guest"))));
+	public FlightsTraveller clickContinueAsGuest() throws Throwable{
+		Thread.sleep(5000);
 		clickByLink("Continue as Guest");
 		return new FlightsTraveller(driver, test);
 	}
@@ -112,8 +111,9 @@ public class FlightsReview extends MakeMyTripWrappers{
 		return new FlightsTraveller(driver, test);
 	}
 
-	public FlightsReview clickLoginAndContinue(){
+	public FlightsReview clickLoginAndContinue() throws InterruptedException{
 
+		Thread.sleep(4000);
 		clickByLink("Login & Continue");
 		return this;
 	}
@@ -137,6 +137,7 @@ public class FlightsReview extends MakeMyTripWrappers{
 	public FlightsTraveller clickLoginButton(){
 		try{
 
+			
 			clickByXpath("/html/body/div[2]/div[1]/div/div[2]/div/div/div[2]/form/p[4]/input");
 
 		}catch (Exception e) {
