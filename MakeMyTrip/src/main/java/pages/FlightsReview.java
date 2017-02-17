@@ -136,13 +136,11 @@ public class FlightsReview extends MakeMyTripWrappers{
 
 	public FlightsTraveller clickLoginButton(){
 		try{
-
-			
-			clickByXpath("/html/body/div[2]/div[1]/div/div[2]/div/div/div[2]/form/p[4]/input");
+			clickByXpath("(//input[@id='login_btn'])[2]");			
 
 		}catch (Exception e) {
 
-			clickByXpath("//*[@id='login_btn']");
+			clickByXpath("/html/body/div[2]/div[1]/div/div[2]/div/div/div[2]/form/p[4]/input");
 		}
 
 		return new FlightsTraveller(driver, test);
