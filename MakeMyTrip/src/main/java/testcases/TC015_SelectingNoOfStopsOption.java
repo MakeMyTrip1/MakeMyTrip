@@ -22,7 +22,7 @@ public class TC015_SelectingNoOfStopsOption extends MakeMyTripWrappers{
 	}
 
 	@Test
-	public void selectingNoOFOption(){
+	public void selectingNoOFOption() throws Throwable{
 
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()

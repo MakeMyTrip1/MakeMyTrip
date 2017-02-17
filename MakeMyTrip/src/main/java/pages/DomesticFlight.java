@@ -183,7 +183,7 @@ public class DomesticFlight extends MakeMyTripWrappers {
 	}
 
 	//select search flight button
-	public FlightSelect clickSearchFlight()
+	public FlightSelect clickSearchFlight() throws Throwable
 	{
 		if(driver.getTitle().equalsIgnoreCase("Cheap Flight Ticket Booking Online, Lowest Domestic Air Fares @ 800/- off")){
 			clickById("flights_submit");

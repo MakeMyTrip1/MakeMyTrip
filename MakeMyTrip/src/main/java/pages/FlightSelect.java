@@ -16,11 +16,12 @@ import wrappers.MakeMyTripWrappers;
 
 public class FlightSelect extends MakeMyTripWrappers {
 
-	public FlightSelect(RemoteWebDriver driver, ExtentTest test){
+	public FlightSelect(RemoteWebDriver driver, ExtentTest test) throws Throwable{
 
 		this.driver = driver;
 		this.test = test;
 
+		Thread.sleep(3000);
 		if(!verifyTitle("Flight Search")){
 
 			reportStep("This is not Flight Search page", "FAIL");

@@ -9,11 +9,11 @@ import wrappers.MakeMyTripWrappers;
 
 public class FlightReviewForInternational extends MakeMyTripWrappers{
 
-	public FlightReviewForInternational(RemoteWebDriver driver, ExtentTest test) {
+	public FlightReviewForInternational(RemoteWebDriver driver, ExtentTest test) throws Throwable {
 
 		this.driver = driver;
 		this.test = test;
-		
+		Thread.sleep(3000);
 		if(!verifyTitle("International Flights Air Tickets, Cheap International Air fares at MakeMyTrip")){
 
 			reportStep("This is not Internationl Flight Review Page", "FAIL");

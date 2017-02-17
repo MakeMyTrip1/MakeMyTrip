@@ -21,7 +21,7 @@ public class TC017_SelectingAirlines extends MakeMyTripWrappers{
 	}
 	
 	@Test
-	public void selectingAirLines(){
+	public void selectingAirLines() throws Throwable{
 		
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()

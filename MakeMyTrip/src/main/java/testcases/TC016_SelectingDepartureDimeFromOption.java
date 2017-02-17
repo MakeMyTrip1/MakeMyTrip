@@ -21,7 +21,7 @@ public class TC016_SelectingDepartureDimeFromOption extends MakeMyTripWrappers{
 	}
 	
 	@Test
-	public void selectFlightTimings(){
+	public void selectFlightTimings() throws Throwable{
 		
 		new DomesticFlight(driver, test)
 		.clickOneWayTrip()
