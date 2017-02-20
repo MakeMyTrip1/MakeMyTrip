@@ -52,12 +52,12 @@ public class MakeMyTripWrappers extends GenericWrappers{
 		
 	}
 	
-	@DataProvider(name="fetchData")
+	/*@DataProvider(name="fetchData")
 	public Object[][] getData(){
 		
 		//return new Object[][]{{"DemoSalesManager","crmsfa","GSR","j","h","Media","Partnership"},{"DemoSalesManager","crmsfa","GSR","nnn","mmmm","Media","Partnership"}};
 		return DataInputProvider.getSheet(dataSheetName);		
-	}
+	}*/
 	
 	
 	public void departureDate()
